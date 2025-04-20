@@ -1,0 +1,75 @@
+ Step 1: Create Your todos Table in MySQL
+sql
+Copy
+Edit
+CREATE TABLE todos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    anon_id VARCHAR(255),        -- This links todos to the user's cookie
+    content TEXT,
+    completed BOOLEAN DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+✅ Step 2: Set/Get Cookie in PHP (set-cookie.php or include in header)
+php
+Copy
+Edit
+<?php
+if (!isset($_COOKIE['anon_id'])) {
+    $anon_id = uniqid('user_', true); // unique anon ID
+    setcookie('anon_id', $anon_id, time() + (10 * 365 * 24 * 60 * 60), "/"); // 10 years
+} else {
+    $anon_id = $_COOKIE['anon_id'];
+}
+?>
+Place this at the top of every PHP page that accesses todos.
+
+✅ Step 3: Save a To-Do (PHP Example)
+php
+Copy
+Edit
+<?php
+include 'db.php';
+include 'set-cookie.php';
+
+$content = $_POST['content'];
+$stmt = $pdo->prepare("INSERT INTO todos (anon_id, content) VALUES (?, ?)");
+$stmt->execute([$anon_id, $content]);
+
+echo "Saved";
+?>
+✅ Step 4: Fetch To-Dos for the Current User
+php
+Copy
+Edit
+<?php
+include 'db.php';
+include 'set-cookie.php';
+
+$stmt = $pdo->prepare("SELECT * FROM todos WHERE anon_id = ? ORDER BY created_at DESC");
+$stmt->execute([$anon_id]);
+$todos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+echo json_encode($todos);
+?>
+✅ Step 5: JavaScript Frontend
+Use fetch() to call your PHP scripts:
+
+js
+Copy
+Edit
+// Add a task
+fetch('save-todo.php', {
+  method: 'POST',
+  headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+  body: 'content=' + encodeURIComponent(todoContent)
+}).then(() => loadTodos());
+
+// Load tasks
+function loadTodos() {
+  fetch('get-todos.php')
+    .then(res => res.json())
+    .then(data => {
+      // render the todo items
+      console.log(data);
+    });
+}
