@@ -1,6 +1,6 @@
 <div class="flex flex-col gap-4 justify-center text-center items-center">
           <h1 class="text-3xl font-bold">Your Task Overview</h1>
-          <p class="text-xl font-extralight">Stay organized</p>
+          <p class="text-xl font-extralight">Stay organized </p>
 </div>
 
 <hr />

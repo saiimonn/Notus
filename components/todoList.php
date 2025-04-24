@@ -1,9 +1,9 @@
 <div class="flex gap-6 p-6 bg-gray-100 h-auto">
-          <!-- "To Do" Column -->
+           <!-- "To Do" Column -->
           <div class="w-1/3 bg-white rounded-xl p-4 shadow">
             <h2 class="text-center text-lg font-semibold mb-4">To Do</h2>
 
-            <!-- Task Card -->
+             <!-- Task Card -->
             <div class="bg-gray-50 rounded p-3 mb-3 shadow-sm">
               <p class="font-medium text-blue-600">Design the homepage layout</p>
               <p class="text-sm text-gray-500">March 10, 2025</p>

@@ -16,7 +16,7 @@
         <?php include_once('components/dashboard.php'); ?>
 
         <!-- To do list section (Put in diff file and include here) -->
-         <?php include_once('components/todoList.php'); ?>
+         <?php include_once('components/todoList.php');  ?>
       </div>
     </div>
   </body>

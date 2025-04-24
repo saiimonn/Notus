@@ -1,5 +1,5 @@
 <aside class="fixed top-0 left-0 h-full border-r border-[#4e4b44] w-[14%] p-4 flex flex-col bg-white z-10">
-    <h1 class="text-2xl font-bold">Nōtus</h1>
+    <h1 class="text-2xl font-bold" >Nōtus</h1>
 
     <div class="flex flex-col border rounded-md shadow-sm mt-8">
         <a href="" class="flex flex-row gap-3">
