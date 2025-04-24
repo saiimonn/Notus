@@ -6,10 +6,7 @@
     <title>Nōtus</title>
     <link rel="stylesheet" href="css/tailwind.css" />
   </head>
-  <body
-    class="flex flex-row w-full min-h-screen bg-[#f8f9fa]"
-    style="font-family: 'Inter', sans-serif"
-  >
+  <body class="flex flex-row w-full min-h-screen bg-[#f8f9fa]"style="font-family: 'Inter', sans-serif">
     <!-- Sidebar (Put in diff file and include it here) note: change icons -->
     <aside class="border-r border-[#4e4b44] w-1/7 p-4">
       <div class="flex flex-col border rounded-md shadow-sm">
