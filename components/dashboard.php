@@ -3,7 +3,7 @@
           <p class="text-xl font-extralight">Stay organized </p>
 </div>
 
-<hr />
+<hr/>
 
 <div class="flex flex-row justify-between py-4 items-center">
     <div class="flex flex-col gap-2">

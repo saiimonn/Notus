@@ -15,7 +15,7 @@
       <div class="flex flex-col px-24 py-12 gap-8 h-14 w-[86%] ml-[14%]">
         <?php include_once('components/dashboard.php'); ?>
 
-        <!-- To do list section (Put in diff file and include here) -->
+        <!-- To do list section (Put in diff file and include here) -->  
          <?php include_once('components/todoList.php');  ?>
       </div>
     </div>
